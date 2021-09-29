@@ -22,12 +22,13 @@ public class Form5 extends javax.swing.JFrame {
             // Создаем двустороннюю связь между буферным изображением и классом рисования
             canvas = (Graphics2D) buff.getGraphics();
 
-//            canvas.setPaint(Color.GRAY); // Устанавливаем цвет рисования серым
-//            canvas.fillRect(0, 0, x, y); // Заливаем полотно для рисования
-//
-//            canvas.setPaint(Color.BLACK);  // Устанавливаем цвет рисования черным
-//            canvas.drawOval(100, 80, 90, 90);  // Отрисовываем большой овал
+            canvas.setPaint(Color.WHITE); // Устанавливаем цвет рисования серым
+            canvas.fillRect(0, 0, x, y); // Заливаем полотно для рисования
 
+            canvas.setPaint(Color.BLACK);  // Устанавливаем цвет рисования черным
+            
+//            canvas.drawOval(100, 80, 90, 90);  // Отрисовываем большой овал
+//
 //            canvas.drawArc(100, 115, 90, 30, 180, 180); // Отрисовываем дугу по середине овала
 //            //рисуем два мелньких круга сверху и снизу
 //            canvas.drawOval(140, 70, 10, 10);
@@ -39,26 +40,38 @@ public class Form5 extends javax.swing.JFrame {
             canvas.drawArc(178, 112, 80, 125, 200, 309); //inter/key (x, y, width, height, begin, end)            
             canvas.drawArc(194, 116, 70, 120, 86, -180); //ext/key (x, y, width, height, begin, end)
             canvas.drawArc(120, 114, 8, 10, 90, 90); //duga/key (x, y, width, height, begin, end)
-            canvas.drawArc(220, 159, 20, 31, 0, 360); //dira/key (x, y, width, height, begin, end)
+            canvas.drawOval(220, 159, 20, 31); //dira/key (x, y, width, height, begin, end)
             canvas.drawArc(227, 159, 20, 31, 112, 128); //dira/key/duga (x, y, width, height, begin, end)
             canvas.drawLine(120, 120, 120, 175); //(x1, y1, x2, y2) vertical 90*
             canvas.drawLine(124, 114, 186, 136); //(x1, y1, x2, y2) \1
             canvas.drawLine(120, 120, 184, 142); //(x1, y1, x2, y2) \2
             canvas.drawLine(120, 175, 180, 196); //(x1, y1, x2, y2) \3
             
+            //canvas.drawLine(164, 132, 280, 75); //test (x1, y1, x2, y2)
             
             
-            //устанавливаем стиль и пишим текст
-//            canvas.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 40));
-//            canvas.drawString("Java!", 85, 50);
+            
+            //устанавливаем стиль и пишем текст
+            canvas.setPaint(Color.BLUE);
+            canvas.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 18));
+            canvas.drawString("Вариант 18", 120, 20);
+            canvas.drawString("нарисовано средствами JAVA", 30, 340);
 
             try {
                 // При помощи созданной функции заливки закрашиваем две части главного овала
                 // и два маленьких кружка
-                fill(110, 110, Color.GRAY, Color.WHITE);
-                fill(140, 150, Color.GRAY, Color.RED);
-                fill(145, 75, Color.GRAY, Color.RED);
-                fill(145, 175, Color.GRAY, Color.WHITE);
+//                fill(110, 110, Color.GRAY, Color.WHITE);
+//                fill(140, 150, Color.GRAY, Color.RED);
+//                fill(145, 75, Color.GRAY, Color.RED);
+//                fill(145, 175, Color.GRAY, Color.WHITE);
+                
+                fill(225, 165, Color.WHITE, Color.GRAY); //key/dira/tolshina
+                fill(260, 168, Color.WHITE, Color.GRAY); //key/tolshina
+                fill(164, 132, Color.WHITE, Color.LIGHT_GRAY); //key/top
+                fill(164, 168, Color.WHITE, Color.LIGHT_GRAY); //key/left
+                fill(94, 168, Color.WHITE, Color.GREEN); //zamok
+                fill(64, 168, Color.WHITE, Color.ORANGE); //zamok/tolshina
+                //fill(234, 168, Color.WHITE, Color.YELLOW); //key/dira                
             } catch (Exception ex) {
             }
         }
@@ -101,7 +114,6 @@ public class Form5 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         jPanel1 = new MyPicture();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -109,10 +121,6 @@ public class Form5 extends javax.swing.JFrame {
         setIconImage(java.awt.Toolkit.getDefaultToolkit().createImage(getClass().getResource("icon.png")));
         setResizable(false);
         getContentPane().setLayout(null);
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/task.png"))); // NOI18N
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(20, 360, 301, 47);
 
         jPanel1.setBackground(new java.awt.Color(244, 243, 234));
 
@@ -130,7 +138,7 @@ public class Form5 extends javax.swing.JFrame {
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 360, 350);
 
-        setSize(new java.awt.Dimension(369, 467));
+        setSize(new java.awt.Dimension(369, 380));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -173,7 +181,6 @@ public class Form5 extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
